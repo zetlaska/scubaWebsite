@@ -5,7 +5,7 @@ session_start();
 $username = "";
 $email    = "";
 $viewCourse = false;
-$userID= '';
+$id= '';
 $errors = array(); 
 
 // connect to the database
