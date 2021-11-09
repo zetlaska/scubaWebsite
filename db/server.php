@@ -135,8 +135,10 @@ if (isset($GET['update'])){
     $_SESSION['msg_type'] = "warning";
 
     header('location: index.php');
+    
 }
 
+/*
 if(isset($GET['courseCheck'])){
   
   $username = $_SESSION['username'];
@@ -155,6 +157,7 @@ if(isset($GET['productCheck'])){
 
 }
 
+*/
   
   ?>
 

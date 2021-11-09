@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 09, 2021 at 01:29 PM
+-- Generation Time: Nov 09, 2021 at 09:58 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -146,6 +146,31 @@ INSERT INTO `test` (`id`, `name`, `location`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `trip`
+--
+
+CREATE TABLE `trip` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `bookingDate` date NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `userID` varchar(100) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trip`
+--
+
+INSERT INTO `trip` (`id`, `fname`, `lname`, `email`, `bookingDate`, `location`, `userID`, `username`) VALUES
+(10, 'Dinesh', 'Valan', 'dineshkumarvalan@outlook.com', '2021-12-03', 'Manukan', NULL, NULL),
+(11, 'Dinesh', 'Valan', 'dineshkumarvalan@outlook.com', '2021-11-11', 'Pangkor', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -188,6 +213,12 @@ ALTER TABLE `test`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `trip`
+--
+ALTER TABLE `trip`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -214,6 +245,12 @@ ALTER TABLE `shop`
 --
 ALTER TABLE `test`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `trip`
+--
+ALTER TABLE `trip`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`

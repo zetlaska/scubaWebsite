@@ -65,7 +65,7 @@
                     </ul>
 
 
-                    <a href="#" class="btn btn-primary">Book Now</a>
+                    <a href="manukanPay.php" class="btn btn-primary">Book Now</a>
                     <br \>
                 </div>
             </div>

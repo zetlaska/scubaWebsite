@@ -62,7 +62,7 @@
                         <li>Swimming pool</li>
 
                     </ul>
-                    <a href="#" class="btn btn-primary">Book Now</a>
+                    <a href="pangkorPay.php" class="btn btn-primary">Book Now</a>
                     <br \>
                 </div>
             </div>
