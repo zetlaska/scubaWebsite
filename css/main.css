@@ -1,0 +1,139 @@
+body,
+html {
+    height: 100%;
+    background-image: url(http://localhost/diver/img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #030303;
+}
+
+.cardholder {
+    position: relative;
+    margin-top: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.card-body {
+    height: 210px;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    text-align: justify
+}
+
+.carousel-frame {
+    margin: auto;
+    padding-top: 75px;
+    height: 1000px;
+    width: 1000px;
+    position: relative;
+    text-align: center;
+}
+
+.carousel-text {
+    position: relative;
+    margin-top: 25px;
+    padding-bottom: 50px;
+}
+
+.content-body {
+    position: relative;
+    text-align: center;
+}
+
+.card-body-2 {
+    height: 400x;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    text-align: justify;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.card-text-2 {
+    position: relative;
+    text-align: justify;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card-list {
+    position: relative;
+    text-align: justify;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+}
+
+.col-12-button {
+    position: relative;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+}
+
+.btn-success {
+    min-width: 80px;
+}
+
+.login-frame {
+    margin: auto;
+    margin-top: 200px;
+    padding-bottom: 75px;
+    height: 599px;
+    width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.card-body-3 {
+    margin: auto;
+    margin-top: 200px;
+}
+
+
+/*
+#main-container a {
+    text-align: justify;
+    color: #1585cf;
+    font-weight: 500;
+}
+
+#main-container a:hover {
+    color: #1585cf;
+    border-bottom: 1px dashed #1585cf;
+    text-decoration: none;
+    padding-bottom: 2px;
+    text-align: justify;
+}
+
+p,
+table,
+tr,
+td,
+ul,
+li,
+blockquote,
+nav,
+a,
+footer,
+dl,
+dt,
+dd {
+    font-size: 1rem;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 400;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+*/
