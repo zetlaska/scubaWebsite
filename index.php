@@ -28,6 +28,14 @@ include('header/navUser.php');
         <title>Home - Megalodon</title>
     </head>
     <body>
+        <?php if (isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+                <?php 
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+                ?>
+            </div>
+        <?php endif ?>
         <div class="mx-auto mt-5 mb-2 bg-white text-black p-4" style="width: 700px; height: 200px; border-radius: .30rem">
             <h5 class="text-center">Announcement</h5>
             <p style="text-align: justify;">Please contact us at <b>+60123456789</b> or <b>email us by clicking the button below</b> for any enquiries or support if you face any technical issues.</p>

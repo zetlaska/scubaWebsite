@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 09, 2021 at 09:58 PM
+-- Generation Time: Nov 09, 2021 at 11:26 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -156,17 +156,8 @@ CREATE TABLE `trip` (
   `email` varchar(100) NOT NULL,
   `bookingDate` date NOT NULL,
   `location` varchar(100) NOT NULL,
-  `userID` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `trip`
---
-
-INSERT INTO `trip` (`id`, `fname`, `lname`, `email`, `bookingDate`, `location`, `userID`, `username`) VALUES
-(10, 'Dinesh', 'Valan', 'dineshkumarvalan@outlook.com', '2021-12-03', 'Manukan', NULL, NULL),
-(11, 'Dinesh', 'Valan', 'dineshkumarvalan@outlook.com', '2021-11-11', 'Pangkor', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -250,7 +241,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`

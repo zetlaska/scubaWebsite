@@ -5,11 +5,13 @@ session_start();
 $username = "";
 $email    = "";
 $viewCourse = false;
-$id = '';
+$userID= '';
 $errors = array(); 
 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'megalodon');
+$mysqli = new mysqli('localhost', 'root', '', 'megalodon' ) or die(mysqli_error($mysqli));
+
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -85,6 +87,63 @@ if (isset($_POST['login_user'])) {
     }
   }
 
+  if(isset($_POST['bookManukan'])){
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $location = 'Manukan';
+    $bookingDate = date('Y-m-d', strtotime($_POST['bookingDate']));
+    $username = $_SESSION['username'];
+
+
+    $mysqli->query("INSERT INTO trip (fname, lname, email, bookingDate, location, username) VALUES('$fname', '$lname', '$email', '$bookingDate', '$location', '$username')") or die($mysqli_error());
+    $_SESSION['message'] = "Your booking has been submitted!";
+    $_SESSION['msg_type'] = "success";
+
+    header('location: index.php');
+
+}
+
+if(isset($_POST['bookPangkor'])){
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $location = 'Pangkor';
+    $bookingDate = date('Y-m-d', strtotime($_POST['bookingDate']));
+    $username = $_SESSION['username'];
+
+
+    $mysqli->query("INSERT INTO trip (fname, lname, email, bookingDate, location, username) VALUES('$fname', '$lname', '$email', '$bookingDate', '$location', '$username')") or die($mysqli_error());
+    $_SESSION['message'] = "Your booking has been submitted!";
+    $_SESSION['msg_type'] = "success";
+
+    header('location: index.php');
+
+}
+
+
+/*
+if(isset($GET['courseCheck'])){
+  
+  $username = $_SESSION['username'];
+  $courseName = $mysqli->query("SELECT * FROM openWaterDiver VALUES($name)") or die($mysqli_error());
+  
+
+  if ($username = $courseName ){
+    $viewCourse = true;
+
+  }
+}
+
+if(isset($GET['productCheck'])){
+  
+  $username = $_SESSION['username'];
+
+}
+
+*/
+
+/*
   if(isset($_POST['save'])){
     $name = $_POST['name'];
     $location = $_POST['location'];
@@ -138,27 +197,7 @@ if (isset($GET['update'])){
     
 }
 
-/*
-if(isset($GET['courseCheck'])){
-  
-  $username = $_SESSION['username'];
-  $courseName = $mysqli->query("SELECT * FROM openWaterDiver VALUES($name)") or die($mysqli_error());
-  
-
-  if ($username = $courseName ){
-    $viewCourse = true;
-
-  }
-}
-
-if(isset($GET['productCheck'])){
-  
-  $username = $_SESSION['username'];
-
-}
-
-*/
-  
+*/ 
   ?>
 
   

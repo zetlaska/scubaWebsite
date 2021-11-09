@@ -1,6 +1,5 @@
 <?php 
 include('db/server.php');
-include('db/book.php');
 include('header/navUser.php');
 ?>
 <!DOCTYPE html>
@@ -15,16 +14,8 @@ include('header/navUser.php');
         <title>Pangkor Island Booking - Megladon</title>
     </head>
     <body>
-        <?php if (isset($_SESSION['message'])): ?>
-        <div class="alert alert-<?=$_SESSION['msg_type']?>">
-            <?php 
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-            ?>
-        </div>
-        <?php endif ?>
         <div class="mx-auto mt-5 mb-2 bg-white text-black p-5" style=" height:fit-content; width:fit-content; border-radius: .30rem">
-            <form action="db/book.php" method="POST">
+            <form action="pangkorPay.php" method="POST">
                 <h5 class="text-center mb-4">Checkout Page</h1>
                 <div class="row ">
                     <div class="col">
