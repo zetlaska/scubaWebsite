@@ -17,7 +17,7 @@ include('header/navUser.php');
         <form>
             <div class="card">
                 <div class="card-header">
-                    <div class="row justify-content-center mb">
+                    <div class="row justify-content-center mb-3">
                         <h1>Log Your Dive</h1>
                     </div>
                 </div> 

@@ -12,7 +12,6 @@ $errors = array();
 $db = mysqli_connect('localhost', 'root', '', 'megalodon');
 $mysqli = new mysqli('localhost', 'root', '', 'megalodon' ) or die(mysqli_error($mysqli));
 
-
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
@@ -96,7 +95,7 @@ if (isset($_POST['login_user'])) {
     $username = $_SESSION['username'];
 
 
-    $mysqli->query("INSERT INTO trip (fname, lname, email, bookingDate, location, username) VALUES('$fname', '$lname', '$email', '$bookingDate', '$location', '$username')") or die($mysqli_error());
+    $mysqli->query("INSERT INTO bookings (fname, lname, email, bookingDate, location, username) VALUES('$fname', '$lname', '$email', '$bookingDate', '$location', '$username')") or die($mysqli_error());
     $_SESSION['message'] = "Your booking has been submitted!";
     $_SESSION['msg_type'] = "success";
 
@@ -113,13 +112,58 @@ if(isset($_POST['bookPangkor'])){
     $username = $_SESSION['username'];
 
 
-    $mysqli->query("INSERT INTO trip (fname, lname, email, bookingDate, location, username) VALUES('$fname', '$lname', '$email', '$bookingDate', '$location', '$username')") or die($mysqli_error());
+    $mysqli->query("INSERT INTO bookings (fname, lname, email, bookingDate, location, username) VALUES('$fname', '$lname', '$email', '$bookingDate', '$location', '$username')") or die($mysqli_error());
     $_SESSION['message'] = "Your booking has been submitted!";
     $_SESSION['msg_type'] = "success";
 
     header('location: index.php');
 
 }
+
+
+if(isset($_POST['bookOPD'])){
+  $username = $_SESSION['username'];
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $contact = $_POST['contact'];
+  $courseName = 'Open Water Diving';
+  $courseQuiz = 'quizOPD.php';
+
+
+
+  $mysqli->query("INSERT INTO courseRegis (username, fname, lname, contact, courseName, courseQuiz) VALUES('$username', '$fname', '$lname', '$contact', '$courseName', '$courseQuiz')") or die($mysqli_error());
+  $_SESSION['message'] = "Your booking has been submitted!";
+  $_SESSION['msg_type'] = "success";
+
+  header('location: index.php');
+
+}
+
+if(isset($_POST['bookDiveComputer'])){
+  $username = $_SESSION['username'];
+  $name = $_POST['name'];
+  $contact= $_POST['contact'];
+  $address = $_POST['address'];
+  $courseName = 'Open Water Diving';
+  $courseQuiz = 'quizOPD.php';
+  $price = "1699.00";
+  $itemName =  "Dive Computer";
+
+
+
+
+  $mysqli->query("INSERT INTO orders (itemName, name, price, contact, address, username) VALUES('$itemName', '$name', '$price', '$contact', '$address', '$username')") or die($mysqli_error());
+  $_SESSION['message'] = "Your payment has been submitted!";
+  $_SESSION['msg_type'] = "success";
+
+  header('location: index.php');
+
+}
+
+
+
+/*
+
 
 
 /*
