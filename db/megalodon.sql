@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 10, 2021 at 05:05 AM
+-- Generation Time: Nov 11, 2021 at 09:30 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -43,7 +43,28 @@ CREATE TABLE `bookings` (
 
 INSERT INTO `bookings` (`id`, `fname`, `lname`, `email`, `bookingDate`, `location`, `username`) VALUES
 (26, 'test', '1', 'test1@gmail.com', '2021-11-02', 'Manukan', 'test'),
-(27, 'Test', '2', 'test2@gmail.com', '2021-11-26', 'Pangkor', 'test');
+(27, 'Test', '2', 'test2@gmail.com', '2021-11-26', 'Pangkor', 'test'),
+(28, 'Dev', 'Kamal', 'test2@gmail.com', '2021-11-27', 'Manukan', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certification`
+--
+
+CREATE TABLE `certification` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `certification` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `certification`
+--
+
+INSERT INTO `certification` (`id`, `name`, `certification`, `username`) VALUES
+(1, 'Dinesh Kumar', 'Open Water Diver', 'test');
 
 -- --------------------------------------------------------
 
@@ -107,6 +128,60 @@ INSERT INTO `courseregis` (`regisID`, `username`, `fname`, `lname`, `contact`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `divelog`
+--
+
+CREATE TABLE `divelog` (
+  `logID` int(11) NOT NULL,
+  `diveTitle` varchar(100) NOT NULL,
+  `diveSite` varchar(100) NOT NULL,
+  `diveDate` date DEFAULT NULL,
+  `diveType` varchar(100) NOT NULL,
+  `maxDepth` varchar(100) NOT NULL,
+  `bottomTime` varchar(100) NOT NULL,
+  `weather` varchar(100) NOT NULL,
+  `tempAir` varchar(100) NOT NULL,
+  `tempSurface` varchar(100) NOT NULL,
+  `tempBottom` varchar(100) NOT NULL,
+  `waterType` varchar(100) NOT NULL,
+  `waterBody` varchar(100) NOT NULL,
+  `visibility` varchar(100) NOT NULL,
+  `visibility2` varchar(100) NOT NULL,
+  `waves` varchar(100) NOT NULL,
+  `current` varchar(100) NOT NULL,
+  `surge` varchar(100) NOT NULL,
+  `suit` varchar(100) NOT NULL,
+  `weight` varchar(100) NOT NULL,
+  `weightType` varchar(100) NOT NULL,
+  `cylinderType` varchar(100) NOT NULL,
+  `cylinderSize` varchar(100) NOT NULL,
+  `gas` varchar(100) NOT NULL,
+  `oxygen` varchar(100) NOT NULL,
+  `nitrogen` varchar(100) NOT NULL,
+  `helium` varchar(100) NOT NULL,
+  `cylinder1` varchar(100) NOT NULL,
+  `cylinder2` varchar(100) NOT NULL,
+  `cylinder3` varchar(100) NOT NULL,
+  `additional` varchar(100) NOT NULL,
+  `experience` varchar(100) NOT NULL,
+  `note` varchar(1000) NOT NULL,
+  `buddy` varchar(100) NOT NULL,
+  `diveCenter` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `dateAdded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `divelog`
+--
+
+INSERT INTO `divelog` (`logID`, `diveTitle`, `diveSite`, `diveDate`, `diveType`, `maxDepth`, `bottomTime`, `weather`, `tempAir`, `tempSurface`, `tempBottom`, `waterType`, `waterBody`, `visibility`, `visibility2`, `waves`, `current`, `surge`, `suit`, `weight`, `weightType`, `cylinderType`, `cylinderSize`, `gas`, `oxygen`, `nitrogen`, `helium`, `cylinder1`, `cylinder2`, `cylinder3`, `additional`, `experience`, `note`, `buddy`, `diveCenter`, `username`, `dateAdded`) VALUES
+(1, 'test', 'test', '2021-11-06', 'Boat', 'test', 'test', 'Cloudy', 'test', 'test', 'test', 'Salty', 'River', 'High', 'test', 'Medium', 'Medium', 'Light', 'Dry Suit', 'test', 'Heavy', 'Aluminium', 'test', 'Enriched', 'test', 'test', 'test', 'test', 'test', 'test', 'Hood', 'Amazing', 'test', 'test', 'test', 'test', '2021-11-11 06:24:23'),
+(2, 'test2', 'test2', '2021-11-25', 'Other', 'test2', 'test2', 'Rainy', 'test2', 'test2', 'test2', 'Fresh', 'Quarry', 'Low', 'test2', 'Small', 'Light', 'Strong', 'Shorty', 'test2', 'Good', 'Other', 'test2', 'EANX40', 'test2', 'test2', 'test2', 'test2', 'test2', 'test2', 'Boots', 'Amazing', 'test2', 'test2', 'test2', 'test', '2021-11-11 07:12:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
@@ -126,7 +201,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `itemName`, `name`, `price`, `contact`, `address`, `username`, `datePurchased`) VALUES
-(2, 'Dive Computer', 'test', '1699.00', 'test', '3587, dsd', 'test', '2021-11-10 04:55:24');
+(2, 'Dive Computer', 'test', '1699.00', 'test', '3587, dsd', 'test', '2021-11-10 04:55:24'),
+(3, 'Dive Computer', '', '1699.00', '', '', 'test', '2021-11-11 09:03:19');
 
 -- --------------------------------------------------------
 
@@ -135,7 +211,7 @@ INSERT INTO `orders` (`id`, `itemName`, `name`, `price`, `contact`, `address`, `
 --
 
 CREATE TABLE `quiz` (
-  `id` int(255) NOT NULL,
+  `id` int(11) NOT NULL,
   `que` text NOT NULL,
   `option 1` varchar(222) NOT NULL,
   `option 2` varchar(222) NOT NULL,
@@ -150,11 +226,11 @@ CREATE TABLE `quiz` (
 --
 
 INSERT INTO `quiz` (`id`, `que`, `option 1`, `option 2`, `option 3`, `option 4`, `ans`, `userans`) VALUES
-(1, 'What does PHP stand for?', 'Preprocessed Hypertext Page', 'Hypertext Markup Language', 'Hypertext Preprocessor', 'Hypertext Transfer Protocol', 'Hypertext Preprocessor', 'technopoints.co.in'),
-(2, 'What will be the value of $var? ', '0', '1', '2', 'NULL', '0', '2'),
-(3, ' ____________ function in PHP Returns a list of response headers sent (or ready to send)', 'header', 'headers_list', 'header_sent', 'header_send', 'headers_list', 'header'),
-(4, 'Which of the following is the Server Side Scripting Language?', 'HTML', 'CSS', 'JS', 'PHP', 'PHP', 'CSS'),
-(5, 'From which website you download this source code?', 'Softglobe.net', 'w3school.com', 'technopoints.co.in', 'php.net', 'technopoints.co.in', 'technopoints.co.in');
+(1, 'If an object is neutrally buoyant (does not sink or float) in fresh water, the same object placed into saltwater would', 'sink.', 'float.', 'either sink or float', 'do nothing.', 'sink.', 'sink.'),
+(2, 'If you take a fully blown balloon to the bottom of the swimming pool. What will happen to the balloon and the air inside it?', 'The balloon will get bigger in size and the air inside will become less dense as gas molecules move further apart', 'The balloon will get smaller in size and the air inside will become less dense as gas molecules move further apart', 'The balloon will get bigger in size and the air inside will become denser as gas molecules move close together', 'The balloon will get smaller in size and the air inside will become denser as gas molecules move close together', 'The balloon will get smaller in size and the air inside will become denser as gas molecules move close together', 'The balloon will get bigger in size and the air inside will become less dense as gas molecules move further apart'),
+(3, 'If you fail to equalise your body air space, it may be due to:', 'Sea sickness', 'Hypertension and heart diseases', 'Ear, nose or throat medical problem such as a cold or allergies', 'Anxiety and panic state', 'Ear, nose or throat medical problem such as a cold or allergies', 'Sea sickness'),
+(4, 'When descending and your ears or sinuses begin to hurt, it usually means that:\n', 'I have equalised my body air spaces', 'The mask strap is extremely tight', 'My mask is too small', 'I am experiencing a squeeze and need to equalise\n', ' I am experiencing a squeeze and need to equalise', 'My mask is too small'),
+(5, 'What is the best position for you to alternate air source?', 'Loose by your side, so you can find it fast', 'The triangle area formed by your chin and lower corners of the rib cage', 'To the base of your cylinder', 'In the back of your BCD between the shoulder blades and waist', 'The triangle area formed by your chin and lower corners of the rib cage.', 'The triangle area formed by your chin and lower corners of the rib cage');
 
 -- --------------------------------------------------------
 
@@ -223,6 +299,12 @@ ALTER TABLE `bookings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `certification`
+--
+ALTER TABLE `certification`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
@@ -235,9 +317,21 @@ ALTER TABLE `courseregis`
   ADD PRIMARY KEY (`regisID`);
 
 --
+-- Indexes for table `divelog`
+--
+ALTER TABLE `divelog`
+  ADD PRIMARY KEY (`logID`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `quiz`
+--
+ALTER TABLE `quiz`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -260,7 +354,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `certification`
+--
+ALTER TABLE `certification`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `course`
@@ -275,10 +375,22 @@ ALTER TABLE `courseregis`
   MODIFY `regisID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `divelog`
+--
+ALTER TABLE `divelog`
+  MODIFY `logID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `quiz`
+--
+ALTER TABLE `quiz`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `shop`

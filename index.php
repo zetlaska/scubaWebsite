@@ -45,14 +45,18 @@ include('header/navUser.php');
         </div>
         <div class="mx-auto mt-1 mb-2 bg-white text-black p-4" style="width: 700px; height:fit-content; border-radius: .30rem">
             <?php
-
             $username = $_SESSION['username'];
-
-
             $mysqli = new mysqli('localhost', 'root', '', 'megalodon' ) or die(mysqli_error($mysqli));
             $courseList = $mysqli->query("SELECT * FROM courseRegis WHERE username='$username'") or die(mysqli_error($mysqli));
-
+            $certification = $mysqli->query("SELECT * FROM certification WHERE username='$username'") or die(mysqli_error($mysqli));
             ?>
+                    <?php
+                    
+                    while ($row = $certification->fetch_assoc()): ?>         
+                    <h6 style="text-align: justify">Full Name: <?php echo $row['name']; ?></h6>
+                    <h6 style="text-align: justify">Highest Certification: <?php echo $row['certification']; ?></h6>
+                    <br/>
+                    <?php endwhile; ?>
                     <table class="table">
                     <thead>
                         <tr>
