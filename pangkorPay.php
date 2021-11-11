@@ -16,7 +16,7 @@ include('header/navUser.php');
     <body>
         <div class="mx-auto mt-5 mb-2 bg-white text-black p-5" style=" height:fit-content; width:fit-content; border-radius: .30rem">
             <form action="pangkorPay.php" method="POST">
-                <h5 class="text-center mb-4">Checkout Page</h1>
+                <h5 class="text-center mb-4">Checkout Page</h5>
                 <div class="row ">
                     <div class="col">
                         <label class="form-label">First Name</label>

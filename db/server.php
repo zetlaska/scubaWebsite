@@ -160,6 +160,51 @@ if(isset($_POST['bookDiveComputer'])){
 
 }
 
+if(isset($_POST['createLog'])){
+  $username = $_SESSION['username'];
+  $diveTitle = $_POST['diveTitle'];
+  $diveSite = $_POST['diveSite'];
+  $diveDate = date('Y-m-d', strtotime($_POST['diveDate']));
+  $diveType = $_POST['diveType'];
+  $maxDepth = $_POST['maxDepth'];
+  $bottomTime = $_POST['bottomTime'];
+  $weather = $_POST['weather'];
+  $tempAir = $_POST['tempAir'];
+  $tempSurface = $_POST['tempSurface'];
+  $tempBottom = $_POST['tempBottom'];
+  $waterType = $_POST['waterType'];
+  $waterBody = $_POST['waterBody'];
+  $visibility = $_POST['visibility'];
+  $visibility2 = $_POST['visibility2'];
+  $waves = $_POST['waves'];
+  $current = $_POST['current'];
+  $surge = $_POST['surge'];
+  $suit = $_POST['suit'];
+  $weight = $_POST['weight'];
+  $weightType = $_POST['weightType'];
+  $cylinderType = $_POST['cylinderType'];
+  $cylinderSize = $_POST['cylinderSize'];
+  $gas = $_POST['gas'];
+  $oxygen = $_POST['oxygen'];
+  $nitrogen = $_POST['nitrogen'];
+  $helium = $_POST['helium'];
+  $cylinder1 = $_POST['cylinder1'];
+  $cylinder2 = $_POST['cylinder2'];
+  $cylinder3 = $_POST['cylinder3'];
+  $additional = $_POST['additional'];
+  $experience = $_POST['experience'];
+  $note = $_POST['note'];
+  $buddy = $_POST['buddy'];
+  $diveCenter = $_POST['diveCenter'];
+
+
+  $mysqli->query("INSERT INTO divelog (username, diveTitle, diveSite, diveDate, diveType, maxDepth, bottomTime, weather, tempAir, tempSurface, tempBottom, waterType, waterBody, visibility, visibility2, waves, current, surge, suit, weight, weightType, cylinderType, cylinderSize, gas, oxygen, nitrogen, helium, cylinder1, cylinder2, cylinder3, additional, experience, note, buddy, diveCenter) VALUES('$username', '$diveTitle', '$diveSite', '$diveDate', '$diveType', '$maxDepth', '$bottomTime', '$weather' ,'$tempAir', '$tempSurface', '$tempBottom', '$waterType', '$waterBody', '$visibility', '$visibility2', '$waves', '$current', '$surge', '$suit', '$weight', '$weightType', '$cylinderType', '$cylinderSize', '$gas', '$oxygen', '$nitrogen', '$helium', '$cylinder1', '$cylinder2', '$cylinder3', '$additional', '$experience', '$note', '$buddy', '$diveCenter')") or die($mysqli_error());
+  $_SESSION['message'] = "Your log has been saved!";
+  $_SESSION['msg_type'] = "success";
+
+  header('location: viewLog.php');
+
+}
 
 
 /*

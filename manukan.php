@@ -39,7 +39,7 @@
         <div class="carousel-text">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3>Manukan Island & Resort</h2>
+                    <h3>Manukan Island & Resort</h3>
                 </div>
                 <br \>
                 <div class="card-body-2">
