@@ -24,13 +24,13 @@ if (isset($_GET['logout'])) {
         <!-- CSS Stylesheet -->
         <link rel="stylesheet" type="text/css" href="css/form.css" />
         
-        <title>Dive Shop - Megalodon</title>
+        <title>Dive Programs - Megalodon</title>
     </head>
     <body>
         <?php require_once 'db/server.php'; ?>
             <?php
                     $mysqli = new mysqli('localhost', 'root', '', 'megalodon' );
-                    $result = $mysqli->query("SELECT * FROM shop");
+                    $result = $mysqli->query("SELECT * FROM course");
 
 
                     //pre_r($result->fetch_assoc());
@@ -40,20 +40,20 @@ if (isset($_GET['logout'])) {
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <div class="col bg-white m-5 " style="width:300px; border-radius: .30rem" >
                             <div class="row pt-2">
-                                <?php echo '<img class"center" style="width:300px; height 300px" src="data:image/jpeg;base64,'.base64_encode($row['productImage']).'"/>'; ?>
+                                <?php echo '<img class"center" style="width:300px; height 300px" src="data:image/jpeg;base64,'.base64_encode($row['courseImage']).'"/>'; ?>
                             </div>
                             <div class="row" style="min-height:50px">
-                                <h5 class="text-center"><?php echo $row['productName']; ?></h5>
+                                <h5 class="text-center"><?php echo $row['courseName']; ?></h5>
                             </div>
                             <div class="row" style="min-height:140px">
-                                <p style="text-align: justify;"><?php echo $row['productDesc']; ?></p>
+                                <p style="text-align: justify;"><?php echo $row['courseDesc']; ?></p>
                             </div>
                             <div class="row" style="min-height:50px">
-                                <h4 class="text-center">RM <?php echo $row['productPrice']; ?></h4>
+                                <h4 class="text-center">RM <?php echo $row['coursePrice']; ?></h4>
                             </div>
                             <div class="row pb-2">
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <a class="btn btn-primary" href="<?php echo $row['productPage'];?>" role="button">Buy Now</a>
+                                    <a class="btn btn-primary" href="<?php echo $row['coursePage'];?>" role="button">Buy Now</a>
                                 </div>
                             </div>     
                         </div>           

@@ -1,15 +1,10 @@
 <?php 
 include('db/server.php');
-include('header/navUser.php');
+include('header/navPublic.php');
 
-if (!isset($_SESSION['username'])) {
+if (isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: home.php');
-}
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location: home.php");
+    header('location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -18,8 +13,8 @@ if (isset($_GET['logout'])) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/trip.css" />
-    <title>Manukan Island - Megalodon</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <title>Pangkor Island - Megalodon</title>
 </head>
 <body>
     <div class="carousel-frame">
@@ -31,13 +26,13 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/manukan1.jpg" class="d-block w-100" alt="...">
+                    <img src="img/pangkor1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/manukan2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/pangkor2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/manukan3.jpg" class="d-block w-100" alt="...">
+                    <img src="img/pangkor3.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -52,7 +47,7 @@ if (isset($_GET['logout'])) {
         <div class="carousel-text">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3>Manukan Island & Resort</h3>
+                    <h3>Pangkor Island & Resort</h3>
                 </div>
                 <br \>
                 <div class="card-body-2">
@@ -64,28 +59,24 @@ if (isset($_GET['logout'])) {
                             <cite title="Source Title"> Sabah Travel Blog</cite>
                         </figcaption>
                     </figure>
-                    <p class="card-text">Our 3 days 2 nights stay & scuba dive or snorkel safari holiday package provides the opportunity to experience some of the best coral reef whilst staying in beautiful beach or hill side accommodation on Manukan Island Resort in the
-                        Tunku Abdul Rahman Park.</p>
+                    <p class="card-text">Our 3 days 2 nights stay & scuba dive or snorkel safari holiday package provides the opportunity to experience some of the best coral reef whilst staying in beautiful beach side accommodations in Giam Island, one of the most famous diving spots in Pulau Pangkor.</p>
                     <ul class="card-list">
                         <lr><b>Facilities Include</b></lr>
                         <li>Open Air Buffet & A’La Carte Restaurant</li>
                         <li>PADI 5 Star CDC Dive Centre</li>
-                        <li>Volleyball and Badminton Courts</li>
+                        <li>Basketball and Tennis Courts</li>
                         <li>Jetski, Banana Boats, Parasailing</li>
                         <li>WiFi Internet</li>
                         <li>Swimming pool</li>
 
                     </ul>
-
-                    <a href="manukanPay.php" class="btn btn-primary">Book Now</a>
-                    <br \>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <!-- Bootstrap Javascript Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- Bootstrap Javascript Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 

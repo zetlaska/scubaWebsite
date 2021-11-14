@@ -1,3 +1,17 @@
+<?php 
+include('db/server.php');
+include('header/navUser.php');
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: home.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: home.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +22,6 @@
     <title>Pangkor Island - Megalodon</title>
 </head>
 <body>
-<?php include('header/navUser.php'); ?>
     <div class="carousel-frame">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -69,22 +82,8 @@
         </div>
     </div>
     </div>
-
-
-
-
-
-
-
-    <!-- jQuery -->
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
-    <!-- Bootstrap JS Library -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js " integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd " crossorigin="anonymous "></script>
-    <script src="w3data.js "></script>
-    <script>
-        w3IncludeHTML();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 " crossorigin="anonymous "></script>
+<!-- Bootstrap Javascript Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 

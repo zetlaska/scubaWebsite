@@ -2,7 +2,6 @@
 include('db/server.php');
 include('header/navPublic.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

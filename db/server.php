@@ -131,7 +131,7 @@ if(isset($_POST['bookOPD'])){
 
 
 
-  $mysqli->query("INSERT INTO courseRegis (username, fname, lname, contact, courseName, courseQuiz) VALUES('$username', '$fname', '$lname', '$contact', '$courseName', '$courseQuiz')") or die($mysqli_error());
+  $mysqli->query("INSERT INTO enrollment (username, fname, lname, contact, courseName, courseQuiz) VALUES('$username', '$fname', '$lname', '$contact', '$courseName', '$courseQuiz')") or die($mysqli_error());
   $_SESSION['message'] = "Your booking has been submitted!";
   $_SESSION['msg_type'] = "success";
 

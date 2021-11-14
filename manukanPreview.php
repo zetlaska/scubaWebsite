@@ -1,15 +1,10 @@
 <?php 
 include('db/server.php');
-include('header/navUser.php');
+include('header/navPublic.php');
 
-if (!isset($_SESSION['username'])) {
+if (isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: home.php');
-}
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location: home.php");
+    header('location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -76,9 +71,6 @@ if (isset($_GET['logout'])) {
                         <li>Swimming pool</li>
 
                     </ul>
-
-                    <a href="manukanPay.php" class="btn btn-primary">Book Now</a>
-                    <br \>
                 </div>
             </div>
         </div>

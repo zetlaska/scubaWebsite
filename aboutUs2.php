@@ -1,26 +1,16 @@
 <?php 
 include('db/server.php');
-include('header/navUser.php');
-
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: home.php');
-}
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location: home.php");
-}
+include('header/navPublic.php');
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- CSS Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="css/form.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>About Us - Megalodon</title>
     </head>
     <body>

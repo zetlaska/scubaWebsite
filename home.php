@@ -1,15 +1,10 @@
 <?php 
 include('db/server.php');
-include('header/navUser.php');
+include('header/navPublic.php');
 
-if (!isset($_SESSION['username'])) {
+if (isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: home.php');
-}
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location: home.php");
+    header('location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -30,7 +25,7 @@ if (isset($_GET['logout'])) {
             <div class="container-fluid text-white py-5" >
                 <h1 class="display-5 fw-bold">Diving Courses</h1>
                 <p class="col-md-8 fs-4">Welcome to Megalodon Dive Academy, Feel free to browse the various courses we offer.</p>
-                <a class="btn btn-primary btn-lg" href="courses.php" type="button">View Courses</a>
+                <button class="btn btn-primary btn-lg" type="button">View Courses</button>
             </div>
             </div>
         
@@ -39,14 +34,14 @@ if (isset($_GET['logout'])) {
                 <div class="h-100 p-5 text-white bg-dark rounded-3" style="background-image: url('img/shopPreview.jpg'); background-size: cover;">
                 <h2>Diving Equipment</h2>
                 <p>Want to purchase diving equipment instead? Feel free to browse the products offered at our dive shop.</p>              
-                <a class="btn btn-primary btn-m" href="shop.php" type="button">Browse Equipment</a>
+                <button class="btn btn-primary btn-m" type="button">Browse Equipment</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="h-100 p-5 text-white bg-dark rounded-3" style="background-image: url('img/tripPreview.jpg'); background-size: cover;">
                 <h2>Our Trips</h2>
                 <p>If you would like to book a dive trip, feel free to check out our 3 day dive retreat at Manukan Island.</p>
-                <a class="btn btn-primary btn-m" href="manukan.php" type="button">Dive Trips</a>
+                <button class="btn btn-primary btn-m" type="button">Dive Trips</button>
                 </div>
             </div>
             </div>
@@ -56,4 +51,7 @@ if (isset($_GET['logout'])) {
     <!-- Bootstrap Javascript Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>
+
+
+
 

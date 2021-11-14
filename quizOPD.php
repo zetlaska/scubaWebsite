@@ -4,13 +4,13 @@ include('header/navUser.php');
 
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
+    header('location: home.php');
+}
+if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header("location: login.php");
-  }
+    header("location: home.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
