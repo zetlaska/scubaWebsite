@@ -8,8 +8,6 @@ $errors = array();
 
 // Database connections
 $mysqli = new mysqli('localhost', 'root', '', 'megalodon' ) or die(mysqli_error($mysqli));
-
-
 // Register
 if (isset($_POST['reg_user'])) {
   $username = mysqli_real_escape_string($mysqli, $_POST['username']);

@@ -2,7 +2,6 @@
 include('db/server.php');
 include('header/navUser.php');
 
-
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: home.php');
@@ -33,7 +32,7 @@ if (isset($_GET['logout'])) {
         $c = $_SESSION['clicks'];
         if(isset($_POST['userans'])) { $userselected = $_POST['userans'];
         $fetchqry2 = "UPDATE `quiz` SET `userans`='$userselected' WHERE `id`=$c-1"; 
-        $result2 = mysqli_query($db,$fetchqry2);
+        $result2 = mysqli_query($mysqli,$fetchqry2);
         }
 
         } else {
@@ -51,7 +50,7 @@ if (isset($_GET['logout'])) {
             <table class="d-flex justify-content-center">
             <?php 
             if(isset($c)) {   $fetchqry = "SELECT * FROM `quiz` where id='$c'"; 
-            $result=mysqli_query($db,$fetchqry);
+            $result=mysqli_query($mysqli,$fetchqry);
             $num=mysqli_num_rows($result);
             $row = mysqli_fetch_array($result,MYSQLI_ASSOC); }
             ?>
@@ -66,7 +65,7 @@ if (isset($_GET['logout'])) {
         <?php 
         if($_SESSION['clicks']>5){ 
         $qry3 = "SELECT `ans`, `userans` FROM `quiz`;";
-        $result3 = mysqli_query($db,$qry3);
+        $result3 = mysqli_query($mysqli,$qry3);
         $storeArray = Array();
         while ($row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC)) {
             if($row3['ans']==$row3['userans']){
