@@ -20,7 +20,7 @@ if (isset($_GET['logout'])) {
         <!--Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- CSS Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="css/form.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Log Your Dive - Megalodon</title>
     </head>
     <body>
@@ -388,7 +388,6 @@ if (isset($_GET['logout'])) {
                         <label class="form-label"><h6>Note</h6></label>
                         <textarea class="form-control" placeholder="Write down your memories of this dive?" name="note" style="height: 100px"></textarea>                         
                     </div>
-                    
                     <div class="col-lg-3 col-sm-6">
                         <label class="form-label"><h6>Buddy</h6><label>
                         <input type="text" class="form-control mb-2" name="buddy" placeholder="Who did you go with?">

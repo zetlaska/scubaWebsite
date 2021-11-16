@@ -2,6 +2,7 @@
 include('db/server.php');
 include('header/navUser.php');
 
+
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: home.php');
@@ -20,11 +21,12 @@ if (isset($_GET['logout'])) {
         <!--Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- CSS Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="css/form.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Quiz Open Water Diving - Megalodon</title>
     </head>
 <body>
-    <div class="mx-auto mt-5 mb-2 bg-white text-black p-4" style="width: 700px; height: fit-content; border-radius: .30rem">
+    <div class="mx-auto mt-5 bg-white text-black p-2" style="width: 700px; height: fit-content; border-radius: .30rem">
+        <h5 class="text-center">Open Water Diving eLearning Quiz</h5>
         <?php
         if (isset($_POST['click']) || isset($_GET['start'])) {
         @$_SESSION['clicks'] += 1 ;
@@ -39,7 +41,7 @@ if (isset($_GET['logout'])) {
         }
         //echo($_SESSION['clicks']);
         ?>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mt-5">
             <form>
                 <?php if($_SESSION['clicks']==0){ ?>
                     <button class="btn btn-primary btn-lg" name="start">Start Quiz</button><?php }?>
@@ -71,14 +73,13 @@ if (isset($_GET['logout'])) {
                 @$_SESSION['score'] += 1 ;
             }
         }
-        ?> 
-    <h2 class="text-center">Open Water Diving</h2>
+        ?>
     <br>
     <span class="d-flex justify-content-center">Correct Answers:&nbsp;<?php echo $no = @$_SESSION['score'];?></span><br>
     <span class="d-flex justify-content-center">Your Score:&nbsp<?php echo $no*2; ?></span>
     <br>
     <div class="d-flex justify-content-center">
-        <a class="btn btn-primary" href="index.php" role="button">Return to Home Page</a>
+        <a class="btn btn-primary" href="dashboard.php" role="button">Return to Dashboard</a>
     </div>
     <?php } ?>
     </div>

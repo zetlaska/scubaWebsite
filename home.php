@@ -3,7 +3,6 @@ include('db/server.php');
 include('header/navPublic.php');
 
 if (isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
     header('location: index.php');
 }
 ?>
@@ -15,7 +14,7 @@ if (isset($_SESSION['username'])) {
         <!--Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- CSS Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="css/form.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Home - Megalodon</title>
     </head>
     <body>
@@ -25,7 +24,7 @@ if (isset($_SESSION['username'])) {
             <div class="container-fluid text-white py-5" >
                 <h1 class="display-5 fw-bold">Diving Courses</h1>
                 <p class="col-md-8 fs-4">Welcome to Megalodon Dive Academy, Feel free to browse the various courses we offer.</p>
-                <button class="btn btn-primary btn-lg" type="button">View Courses</button>
+                <a class="btn btn-primary btn-lg" href="coursePreview.php" type="button">View Courses</a>
             </div>
             </div>
         
@@ -34,14 +33,14 @@ if (isset($_SESSION['username'])) {
                 <div class="h-100 p-5 text-white bg-dark rounded-3" style="background-image: url('img/shopPreview.jpg'); background-size: cover;">
                 <h2>Diving Equipment</h2>
                 <p>Want to purchase diving equipment instead? Feel free to browse the products offered at our dive shop.</p>              
-                <button class="btn btn-primary btn-m" type="button">Browse Equipment</button>
+                <a class="btn btn-primary btn-m" href="shopPreview.php" type="button">Browse Equipment</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="h-100 p-5 text-white bg-dark rounded-3" style="background-image: url('img/tripPreview.jpg'); background-size: cover;">
-                <h2>Our Trips</h2>
-                <p>If you would like to book a dive trip, feel free to check out our 3 day dive retreat at Manukan Island.</p>
-                <button class="btn btn-primary btn-m" type="button">Dive Trips</button>
+                <h2>Dive Trips</h2>
+                <p>If you would like to book a dive trip, feel free to check out our 3 days 2 night dive package at Manukan Island Resort in the Tunku Abdul Rahman Park.</p>
+                <a class="btn btn-primary btn-m" href="manukanPreview.php" type="button">Dive Trips</a>
                 </div>
             </div>
             </div>
