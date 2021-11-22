@@ -50,7 +50,8 @@ if (isset($_GET['logout'])) {
                 <h6 style="text-align: justify">Full Name: <?php echo $row['name']; ?></h6>
                 <h6 style="text-align: justify">Highest Certification: <?php echo $row['certification']; ?></h6>
                 <br/>
-                <?php endwhile; ?>
+                <?php endwhile; ?> 
+                <a class="btn btn-success mt-1 mb-3" type="button" href="updateAccount.php">Update Profile</a>
                 <table class="table">
                     <thead>
                         <tr>

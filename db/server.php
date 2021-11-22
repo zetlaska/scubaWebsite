@@ -178,6 +178,42 @@ if(isset($_POST['createLog'])){
   header('location: viewLog.php');
 }
 
+if(isset($_POST['updateProfile'])) {
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "megalodon";
+  
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $userID = $_POST['userID'];
+    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $contactNo = $_POST['contactNo'];
+    $address = $_POST['address'];
+    $sql="UPDATE user SET name='$name', contactNo='$contactNo', address='$address' WHERE userID='$userID'";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Record updated successfully";
+    } else {
+      echo "Error updating record: " . $conn->error;
+    }
+  
+    $conn->close();
+
+    header("location:dashboard.php");
+
+    $_SESSION['message'] = "Your profile has been updated!";
+    $_SESSION['msg_type'] = "success";
+  
+
+}
+
 /*
 if(isset($GET['courseCheck'])){
   
