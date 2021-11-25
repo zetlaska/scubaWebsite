@@ -56,6 +56,7 @@ if (isset($_GET['logout'])) {
                     <input class="form-control"type="text" name="contactNo" value="<?php echo $row['contactNo']; ?>" placeholder="+60123456789">
                 </div>        
                 <?php endwhile; ?>
+                <input type="hidden" name="quiz" value="<?php echo $_GET['quiz']; ?>">
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary" type="submit" name="courseCheckout">Pay</button>
                 </div>

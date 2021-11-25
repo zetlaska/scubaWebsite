@@ -50,7 +50,7 @@ if (isset($_GET['logout'])) {
                             if ($enrollCheck->num_rows == 0):
                         ?>
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <a class="btn btn-primary" href="courseCheckout.php?name=<?php echo $row['courseName'];?>&price=<?php echo $row['coursePrice'];?>" role="button">Buy Now</a>
+                                <a class="btn btn-primary" href="courseCheckout.php?name=<?php echo $row['courseName'];?>&price=<?php echo $row['coursePrice'];?>&quiz=<?php echo $row['coursePage'];?>" role="button">Buy Now</a>
                             </div>
                         <?php else : ?>
                             <div class="d-grid gap-2 col-6 mx-auto">
